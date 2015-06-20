@@ -408,7 +408,7 @@ dlerror (void)
   if (!last_err)
     return NULL;
 
-  ret = FormatMessage (FORMAT_MESSAGE_FROM_SYSTEM
+  ret = FormatMessageA (FORMAT_MESSAGE_FROM_SYSTEM
                        | FORMAT_MESSAGE_IGNORE_INSERTS,
                        NULL, last_err, 0, errbuf, sizeof (errbuf), NULL);
   while (ret > 0 && (errbuf[ret - 1] == '\n' || errbuf[ret - 1] == '\r'))
